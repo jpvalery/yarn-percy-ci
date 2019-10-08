@@ -1,0 +1,8 @@
+name: 'Yarn & Percy CI'
+author: '@jpvalery'
+description: 'Build with Yarn, Snapshot with Percy'
+runs: ''
+image: 'Dockerfile'
+branding:
+  icon: 'aperture'
+  color: 'orange'
