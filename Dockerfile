@@ -1,4 +1,4 @@
-FROM node:10.14.1-alpine
+FROM circleci/node:lts-browsers
 
 LABEL "com.github.actions.name"="Yarn & Percy CI"
 LABEL "com.github.actions.description"="Build with Yarn, Snapshot with Percy"
