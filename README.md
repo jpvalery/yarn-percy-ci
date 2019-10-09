@@ -4,6 +4,9 @@ Build with Yarn, Snapshot with Percy
 GitHub Action to build your project with Yarn followed by Percy snapshots.
 
 ## Under development
+- [] Fix #1
+- [] Implement #2
+- [] QA and release 
 
 ## Requirements
 
@@ -25,10 +28,14 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
+    - uses: actions/checkout@v1 
+    - name: Yarn Install
+      run: yarn install
+    - name: Yarn Build
+      run: yarn build
     - name: Yarn & Percy CI
       uses: jpvalery/yarn-percy-ci@master
       env:
