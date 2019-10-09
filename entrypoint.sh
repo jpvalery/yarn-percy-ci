@@ -20,7 +20,7 @@ else
 fi
 
 # Fallback if workflow hasn't run yarn build yet
-if [ -e node_modules/.bin/percy ]; then
+if [ -e public/index.html ]; then
     echo "✅ Build ready. Continuing..."
 else
     echo "⏳ Build not ready. Building with Yarn..."
