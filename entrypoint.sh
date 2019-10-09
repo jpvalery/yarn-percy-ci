@@ -29,4 +29,4 @@ fi
 
 # Snapshot with Percy
 echo "📷 Snapshotting with Percy..."
-sh -c "yarn percy snapshot"
+sh -c "yarn percy snapshot ./public"
