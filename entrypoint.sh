@@ -19,8 +19,12 @@ else
 fi
 
 # Build with Yarn
-echo "## Building with Yarn..."
-sh -c "yarn build"
+if [ -e node_modules/.bin/percy ]; then
+    echo "## Build ready. Continuing..."
+else
+    echo "## Build not ready. Building with Yarn..."
+    sh -c "yarn build"
+fi
 
 # Snapshot with Percy
 echo "## Snapshotting with Percy..."
