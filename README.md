@@ -4,9 +4,9 @@ Build with Yarn, Snapshot with Percy
 GitHub Action to build your project with Yarn followed by Percy snapshots.
 
 ## Under development
-- [] Fix #1
+- [] Fix #3
 - [] Implement #2
-- [] QA and release 
+- [] QA and release
 
 ## Requirements
 
@@ -27,18 +27,40 @@ on:
     - master
 
 jobs:
-  build:
+  CI_Workflow:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1 
+    - uses: actions/checkout@v1
     - name: Yarn Install
       run: yarn install
     - name: Yarn Build
       run: yarn build
-    - name: Yarn & Percy CI
-      uses: jpvalery/yarn-percy-ci@master
+    - name: Percy
+      run: yarn percy snapshot ./public
       env:
         PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
+```
+
+Goal of this action is to replace this above by
+
+```yaml
+name: CI
+
+on:
+  pull_request:
+    branches:
+    - master
+
+jobs:
+  CI_Workflow:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Action> Yarn & Percy CI
+      uses: jpvalery/yarn-percy-ci@master
+      env:
+        PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 ```
