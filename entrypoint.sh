@@ -3,6 +3,9 @@
 # Exit if any subcommand fails
 set -e
 
+# Gives the circleci user access to all files and folders
+sh -c "chmod -R 777 circleci"
+
 # Requires PERCY_TOKEN
 if [ -n "$PERCY_TOKEN" ]; then
     echo "✅ Percy Token specified. Continuing..."
