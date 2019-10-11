@@ -4,8 +4,8 @@
 set -e
 
 # Gives the circleci user access to all files and folders
-sh -c "sudo chown -R circleci ."
-sh -c "sudo chmod -R 777 ."
+sh -c "sudo chown -R circleci /github/home"
+sh -c "sudo chmod -R 777 /github/home"
 
 # Requires PERCY_TOKEN
 if [ -n "$PERCY_TOKEN" ]; then
