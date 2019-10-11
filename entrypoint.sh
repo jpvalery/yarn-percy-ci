@@ -20,7 +20,7 @@ if [ -e node_modules/.bin/percy ]; then
     echo "✅ Environment ready. Continuing..."
 else
     echo "⏳ Environment not ready. Installing modules..."
-    sh -c "yarn install"
+    sh -c "yarn"
 fi
 
 # Fallback if workflow hasn't run yarn build yet
