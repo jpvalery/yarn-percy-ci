@@ -4,7 +4,7 @@
 set -e
 
 # Gives the circleci user access to all files and folders
-sh -c "chmod -R 777 ."
+sh -c "chown -R circleci *"
 
 # Requires PERCY_TOKEN
 if [ -n "$PERCY_TOKEN" ]; then
