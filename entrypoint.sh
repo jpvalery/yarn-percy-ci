@@ -33,4 +33,4 @@ fi
 
 # Snapshot with Percy
 echo "📷 Snapshotting with Percy..."
-sh -c "LOG_LEVEL=debug yarn percy snapshot ./public"
+sh -c "yarn percy snapshot ./public"
